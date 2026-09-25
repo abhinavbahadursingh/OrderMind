@@ -3,6 +3,8 @@ import { Reveal } from '../components/Reveal'
 import { CTABand } from '../components/CTABand'
 import { ChatThread } from '../components/Mocks'
 import { Icon } from '../components/Icons'
+import { StatCard, BreakdownItem, ScenarioCard, AlertCard } from '../components/DashboardPreview'
+import { SectionHead } from '../components/CTABand'
 
 type Order = {
   id: string
@@ -278,11 +280,124 @@ export function Dashboard() {
         </div>
       </section>
 
+      {/* What you see at a glance */}
+      <section className="section section--tight" style={{ paddingTop: 'clamp(40px, 8vw, 72px)' }}>
+        <div className="container">
+          <div className="stats-strip">
+            <StatCard
+              title="Total Orders Today"
+              value={47}
+              trend={'+12 vs yesterday'}
+              trendPositive={true}
+              icon="store"
+            />
+            <StatCard
+              title="Pending Confirmations"
+              value={14}
+              trend={'+3 vs yesterday'}
+              trendPositive={true}
+              icon="clock"
+            />
+            <StatCard
+              title="Revenue This Week"
+              value="₹1.8L"
+              trend={'+8% vs last week'}
+              trendPositive={true}
+              icon="rupee"
+            />
+            <StatCard
+              title="Avg. Response Time"
+              value="2.3 min"
+              trend={'+45s vs baseline'}
+              trendPositive={false}
+              icon="chat"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Feature-by-feature dashboard breakdown */}
+      <section className="section section--tight">
+        <div className="container">
+          <SectionHead
+            eyebrow="Dashboard breakdown"
+            title="Feature-by-feature view"
+            lede="Zoomed into four key parts of the seller dashboard"
+          />
+          <div className="breakdown-grid">
+            <BreakdownItem
+              title="Order list view"
+              description="Active orders with status tags: New · Confirmed · Billed · Shipped"
+              icon="dashboard"
+            />
+            <BreakdownItem
+              title="Conversation-to-order mapping"
+              description="Chat thread beside extracted fields, confidence score per field"
+              icon="chat"
+            />
+            <BreakdownItem
+              title="Override/edit controls"
+              description="Seller correcting AI-extracted field, subtle before/after animation"
+              icon="edit"
+            />
+            <BreakdownItem
+              title="Billing & payment status"
+              description="Invoice generated, UPI payment link, paid/unpaid tag"
+              icon="receipt"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Built for real seller workflows */}
+      <section className="section section--tight" style={{ paddingTop: 'clamp(40px, 8vw, 72px)' }}>
+        <div className="container">
+          <SectionHead
+            eyebrow="Real workflows"
+            title="Built for real seller workflows"
+            lede="Three common scenarios that power your day"
+          />
+          <div className="scenarios-grid">
+            <ScenarioCard
+              title="Correcting a mistake"
+              story="Seller spots an incorrect size extraction and swaps it in one click — the order, invoice and UPI link all update automatically."
+              icon="edit"
+            />
+            <ScenarioCard
+              title="Bulk order edits"
+              story="Select multiple orders and apply the same change (e.g. update shipping address or adjust pricing) across all of them."
+              icon="tag"
+            />
+            <ScenarioCard
+              title="End-of-day reconciliation"
+              story="Review all pending confirmations, approve or flag them, and generate the day's invoice batch in one flow."
+              icon="calendar"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Notifications/alerts preview */}
+      <section className="section section--tight">
+        <div className="container">
+          <SectionHead
+            eyebrow="Alerts"
+            title="Notifications/alerts preview"
+            lede="Example alerts you might see on the dashboard"
+          />
+          <div className="alerts-panel">
+            <AlertCard message='Order #204 needs review' type='warning' />
+            <AlertCard message='Payment received for Order #198' type='success' />
+            <AlertCard message='Low confidence on size extraction — Order #211' type='attention' />
+          </div>
+        </div>
+      </section>
+
       <CTABand
-        title="Request dashboard access"
-        lede="Early access includes a guided setup of your catalogue, your channels and your approval rules."
-        buttonLabel="Request access"
-        to="/contact"
+        title="This is just a preview — see your real dashboard"
+        lede="This demo shows the core idea. Your real dashboard will connect to your catalogue, channels and orders automatically."
+        buttonLabel="Open full dashboard"
+        to="/stats"
       />
     </>
   )

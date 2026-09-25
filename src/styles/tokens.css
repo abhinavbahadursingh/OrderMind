@@ -36,6 +36,11 @@
   --accent-ink: #23709f; /* accent tuned for text + borders: 4.5:1 on the matte background */
   --accent-ring: rgba(95, 168, 211, 0.4);
 
+  /* ---- status ---- */
+  --success: #2f7a54;
+  --warning: #8a5b12;
+  --error: #b3423a;
+
   --hairline: rgba(27, 42, 58, 0.1);
   --hairline-strong: rgba(27, 42, 58, 0.18);
   --hairline-soft: rgba(27, 42, 58, 0.06);
@@ -116,6 +121,10 @@
   --on-accent: var(--navy-950);
   --accent-ink: #7ec8e3;
   --accent-ring: rgba(126, 200, 227, 0.5);
+
+  --success: #74c9a0;
+  --warning: #e7b967;
+  --error: #e78f86;
 
   --hairline: rgba(232, 241, 245, 0.12);
   --hairline-strong: rgba(232, 241, 245, 0.22);

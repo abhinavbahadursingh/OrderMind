@@ -14,18 +14,6 @@
   box-shadow: var(--lift-1);
 }
 
-/* faint light-catching highlight on the top edge */
-.glass::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  border-radius: inherit;
-  background: var(--glass-highlight);
-  opacity: 0.85;
-  pointer-events: none;
-}
-
 .glass--strong {
   background: var(--glass-fill-strong);
 }
@@ -52,17 +40,6 @@
   padding: clamp(22px, 2.4vw, 30px);
   transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
     border-color var(--dur) var(--ease-out), background-color 340ms var(--ease-in-out);
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  border-radius: inherit;
-  background: var(--glass-highlight);
-  opacity: 0.75;
-  pointer-events: none;
 }
 
 .card--hover:hover {

@@ -29,14 +29,6 @@
   transition: background-color 340ms var(--ease-in-out), box-shadow var(--dur) var(--ease-out);
 }
 
-.nav::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  background: var(--glass-highlight);
-}
-
 .nav.is-stuck {
   box-shadow: var(--lift-1);
 }
@@ -416,14 +408,6 @@
   border: 1px solid var(--glass-inner);
   box-shadow: var(--lift-2);
   text-align: center;
-}
-
-.cta-band::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  background: var(--glass-highlight);
 }
 
 .cta-band__inner {
