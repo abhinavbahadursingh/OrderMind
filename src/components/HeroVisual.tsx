@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Icon } from './Icons'
 import { OrderCard } from './Mocks'
 
-const LOOP_MS = 1500
+const LOOP_MS = 700
 const LAST_STEP = 5
 
 function prefersReducedMotion() {

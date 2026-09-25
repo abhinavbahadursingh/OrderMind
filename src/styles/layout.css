@@ -1,5 +1,5 @@
-﻿/* ==========================================================================
-   Layout â€” navbar, footer, page scaffolding, grids, CTA band
+/* ==========================================================================
+   Layout - navbar, footer, page scaffolding, grids, CTA band
    ========================================================================== */
 
 .app {
@@ -283,7 +283,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-faint);
+  color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
@@ -311,7 +311,7 @@
   padding-top: 24px;
   border-top: 1px solid var(--hairline-soft);
   font-size: var(--fs-sm);
-  color: var(--text-faint);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 860px) {

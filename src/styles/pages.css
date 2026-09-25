@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Page-level compositions
    ========================================================================== */
 
@@ -796,7 +796,7 @@
 
 .status--review {
   border-color: color-mix(in srgb, #d9a441 50%, transparent);
-  color: #c08a2e;
+  color: #8a5b12;
   background: rgba(217, 164, 65, 0.14);
 }
 
@@ -806,7 +806,7 @@
 
 .status--paid {
   border-color: color-mix(in srgb, #4aa876 50%, transparent);
-  color: #3d9267;
+  color: #2f7a54;
   background: rgba(74, 168, 118, 0.14);
 }
 

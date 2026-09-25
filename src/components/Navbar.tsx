@@ -97,7 +97,11 @@ export function Navbar() {
               </span>
             </button>
 
-            <Link to="/contact" className="btn btn--primary btn--sm nav__cta">
+            <Link to="/stats" className="btn btn--primary btn--sm nav__cta">
+              See Stats
+            </Link>
+
+            <Link to="/contact" className="btn btn--secondary btn--sm nav__cta">
               Get Started
             </Link>
 
@@ -126,7 +130,10 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Link to="/contact" className="btn btn--primary">
+          <Link to="/stats" className="btn btn--primary">
+            See Stats
+          </Link>
+          <Link to="/contact" className="btn btn--secondary">
             Get Started
           </Link>
         </nav>

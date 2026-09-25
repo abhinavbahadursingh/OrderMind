@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    OrderMind design tokens
    Flat matte surfaces + liquid-glass depth. No decorative gradients.
    ========================================================================== */
@@ -26,14 +26,14 @@
   --surface: #ffffff;
   --text: var(--navy-800);
   --text-secondary: var(--slate-600);
-  --text-faint: #7c8d9d;
+  --text-faint: #637484;
 
   --accent: var(--sky-500);
   --accent-soft: var(--sky-100);
-  --accent-fill: #2a7cb0; /* solid button fill â€” white text reaches 4.5:1 */
+  --accent-fill: #2a7cb0; /* solid button fill: white text reaches 4.5:1 */
   --accent-fill-hover: #22678f;
   --on-accent: #ffffff;
-  --accent-ink: var(--navy-950); /* text placed on bright accent */
+  --accent-ink: #23709f; /* accent tuned for text + borders: 4.5:1 on the matte background */
   --accent-ring: rgba(95, 168, 211, 0.4);
 
   --hairline: rgba(27, 42, 58, 0.1);
@@ -114,7 +114,7 @@
   --accent-fill: var(--sky-bright);
   --accent-fill-hover: #9ad7ee;
   --on-accent: var(--navy-950);
-  --accent-ink: var(--navy-950);
+  --accent-ink: #7ec8e3;
   --accent-ring: rgba(126, 200, 227, 0.5);
 
   --hairline: rgba(232, 241, 245, 0.12);

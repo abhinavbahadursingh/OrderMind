@@ -9,6 +9,7 @@ import { Features } from './pages/Features'
 import { Dashboard } from './pages/Dashboard'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
+import { Stats } from './pages/Stats'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -20,14 +21,17 @@ function ScrollToTop() {
 
 function Shell() {
   const location = useLocation()
+  const isStats = location.pathname === '/stats'
 
   return (
-    <div className="app">
+    <div className={`app${isStats ? ' app--stats' : ''}`}>
       <ScrollToTop />
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <Navbar />
+      {!isStats && (
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+      )}
+      {!isStats && <Navbar />}
       <main id="main" className="app__main">
         <div className="route-shell" key={location.pathname}>
           <Routes location={location}>
@@ -35,13 +39,14 @@ function Shell() {
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/features" element={<Features />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/stats" element={<Stats />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
       </main>
-      <Footer />
+      {!isStats && <Footer />}
     </div>
   )
 }

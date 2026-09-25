@@ -97,7 +97,7 @@ export function Home() {
             </Reveal>
 
             <Reveal delay={80}>
-              <h1>
+              <h1 className='font-blue'>
                 Your chats. <em>Automatically</em> structured orders.
               </h1>
             </Reveal>
@@ -111,12 +111,12 @@ export function Home() {
 
             <Reveal delay={240}>
               <div className="btn-row">
-                <Link to="/dashboard" className="btn btn--primary btn--lg">
-                  Try the Demo
+                <Link to="/stats" className="btn btn--primary btn--lg">
+                  See Stats
                   <Icon name="arrow-right" />
                 </Link>
-                <Link to="/how-it-works" className="btn btn--secondary btn--lg">
-                  See How It Works
+                <Link to="/dashboard" className="btn btn--secondary btn--lg">
+                  Try the Demo
                 </Link>
               </div>
             </Reveal>
