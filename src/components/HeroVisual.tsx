@@ -35,7 +35,7 @@ export function HeroVisual() {
     .join(' ')
 
   return (
-    <div className={classes} data-motion="always" aria-hidden="true">
+    <div className={classes} data-motion="always" data-glare data-tilt aria-hidden="true">
       <div className="hv__label">
         <span>Incoming chat</span>
         <span className="pill pill--accent">

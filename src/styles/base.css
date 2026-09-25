@@ -108,7 +108,7 @@ hr {
 /* ---- layout helpers ---- */
 
 .container {
-  width: min(var(--container), 100% - var(--gutter) * 2);
+  width: min(var(--container), 90%);
   margin-inline: auto;
 }
 
@@ -314,6 +314,7 @@ hr {
   letter-spacing: -0.015em;
   color: var(--text);
   line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-card__trend {

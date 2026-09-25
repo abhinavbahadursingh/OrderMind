@@ -52,7 +52,7 @@ export function CTABand({
   return (
     <section className="section section--tight">
       <div className="container">
-        <Reveal className="cta-band">
+        <Reveal className="cta-band" data-glare>
           <div className="cta-band__inner">
             <span className="eyebrow">Early access</span>
             <h2>{title}</h2>

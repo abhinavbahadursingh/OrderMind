@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import type { CSSProperties } from 'react'
 import { Reveal } from '../components/Reveal'
 import { SectionHead, CTABand } from '../components/CTABand'
 import { Pipeline } from '../components/Pipeline'
@@ -96,9 +97,23 @@ export function Home() {
               </span>
             </Reveal>
 
-            <Reveal delay={80}>
-              <h1 className='font-blue'>
-                Your chats. <em>Automatically</em> structured orders.
+            <Reveal delay={80} effect="fade">
+              <h1 className="font-blue">
+                <span className="hw" style={{ '--wi': 0 } as CSSProperties}>
+                  Your
+                </span>{' '}
+                <span className="hw" style={{ '--wi': 1 } as CSSProperties}>
+                  chats.
+                </span>{' '}
+                <span className="hw" style={{ '--wi': 2 } as CSSProperties}>
+                  <em>Automatically</em>
+                </span>{' '}
+                <span className="hw" style={{ '--wi': 3 } as CSSProperties}>
+                  structured
+                </span>{' '}
+                <span className="hw" style={{ '--wi': 4 } as CSSProperties}>
+                  orders.
+                </span>
               </h1>
             </Reveal>
 
@@ -144,7 +159,7 @@ export function Home() {
       {/* Problem framing */}
       <section className="section section--tight">
         <div className="container">
-          <Reveal className="problem">
+          <Reveal className="problem" data-glare>
             <div className="problem__grid">
               <div>
                 <span className="eyebrow">The real problem</span>

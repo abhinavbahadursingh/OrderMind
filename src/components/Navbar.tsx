@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Icon, LogoMark } from './Icons'
 import { useTheme } from '../lib/theme-context'
@@ -18,12 +18,30 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const [seenPath, setSeenPath] = useState(location.pathname)
   const [stuck, setStuck] = useState(false)
+  const progressRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const onScroll = () => setStuck(window.scrollY > 8)
+    let raf = 0
+    const paint = () => {
+      raf = 0
+      const bar = progressRef.current
+      if (!bar) return
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0
+      bar.style.transform = `scaleX(${p.toFixed(4)})`
+    }
+    const onScroll = () => {
+      setStuck(window.scrollY > 8)
+      if (!raf) raf = requestAnimationFrame(paint)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (raf) cancelAnimationFrame(raf)
+    }
   }, [])
 
   useEffect(() => {
@@ -117,6 +135,7 @@ export function Navbar() {
             </button>
           </div>
         </div>
+        <span ref={progressRef} className="nav__progress" aria-hidden="true" />
       </header>
 
       <div id="mobile-nav" className={`nav__sheet${open ? ' is-open' : ''}`}>

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { Icon } from './Icons'
 
 /* ---- chat thread ------------------------------------------------------- */
@@ -27,7 +27,11 @@ export function ChatThread({ messages }: { messages: ChatMessage[] }) {
   return (
     <div className="thread">
       {messages.map((m, i) => (
-        <div key={i} className={`bubble bubble--${m.from}`}>
+        <div
+          key={i}
+          className={`bubble bubble--${m.from}`}
+          style={{ '--bi': i } as CSSProperties}
+        >
           <span>{withMarks(m.text, m.marks)}</span>
           {m.meta ? <span className="bubble__meta">{m.meta}</span> : null}
         </div>

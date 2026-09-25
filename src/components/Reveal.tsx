@@ -10,6 +10,7 @@ type RevealProps = {
   id?: string
   style?: CSSProperties
 } & Omit<HTMLAttributes<HTMLElement>, 'children'>
+  & { [key: `data-${string}`]: string | boolean | undefined }
 
 let observer: IntersectionObserver | null = null
 
