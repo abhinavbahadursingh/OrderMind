@@ -166,15 +166,6 @@
   box-shadow: var(--lift-1);
 }
 
-.btn--secondary::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  background: var(--glass-highlight);
-  border-radius: inherit;
-}
-
 .btn--secondary:hover {
   border-color: var(--accent-ring);
   box-shadow: var(--glow-ring);
